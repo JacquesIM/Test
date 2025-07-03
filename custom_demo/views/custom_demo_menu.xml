@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="custom_demo_menu_root" name="Custom Demo"/>
+    <menuitem id="custom_demo_menu" name="Demo Items" parent="custom_demo_menu_root"/>
+    <menuitem id="custom_demo_menu_items" name="Items" parent="custom_demo_menu"
+              action="action_custom_demo"/>
+</odoo>
