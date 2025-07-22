@@ -5,8 +5,10 @@
     'summary': 'Date-based Tax Rates like Currency Exchange',
     'description': 'Manage variable tax rates by date and currency.',
     'depends': ['account'],
-    'data': ['views/tax_rate_views.xml'],
-	'views/tax_rate_action.xml',
-    	'views/tax_rate_menu.xml',
+    'data': [
+    'views/tax_rate_views.xml',
+    'views/tax_rate_action.xml',
+    'views/tax_rate_menu.xml',
+],
     'installable': True,
 }
