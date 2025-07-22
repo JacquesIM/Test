@@ -23,15 +23,15 @@
     <record id="view_tax_rate_table_tree" model="ir.ui.view">
         <field name="name">tax.rate.table.tree</field>
         <field name="model">tax.rate.table</field>
-        <field name="type">list</field> <!-- Correct type for tree view -->
+        <field name="type">list</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="date"/>
                 <field name="base_unit"/>
                 <field name="tax_rate"/>
                 <field name="currency_id"/>
-            </tree>
+            </list>
         </field>
     </record>
 
