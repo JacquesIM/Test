@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_tax_rate_table" model="ir.actions.act_window">
+        <field name="name">Tax Rate Table</field>
+        <field name="res_model">tax.rate.table</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

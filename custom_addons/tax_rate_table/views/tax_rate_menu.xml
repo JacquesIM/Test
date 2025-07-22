@@ -1,0 +1,15 @@
+<!-- tax_rate_menu.xml -->
+<odoo>
+    <!-- Parent Menu -->
+    <menuitem id="menu_tax_rate_root"
+              name="Tax Config"
+              parent="account.menu_finance_configuration"
+              sequence="10"/>
+
+    <!-- Submenu -->
+    <menuitem id="menu_tax_rate_table"
+              name="Tax Rate Table"
+              parent="menu_tax_rate_root"
+              action="action_tax_rate_table"
+              sequence="20"/>
+</odoo>

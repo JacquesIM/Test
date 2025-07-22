@@ -1,0 +1,48 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_tax_rate_table_form" model="ir.ui.view">
+        <field name="name">tax.rate.table.form</field>
+        <field name="model">tax.rate.table</field>
+        <field name="type">form</field>  <!-- Correct type for form view -->
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="base_unit"/>
+                        <field name="tax_rate"/>
+                        <field name="currency_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_tax_rate_table_tree" model="ir.ui.view">
+        <field name="name">tax.rate.table.tree</field>
+        <field name="model">tax.rate.table</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="base_unit"/>
+                <field name="tax_rate"/>
+                <field name="currency_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_tax_rate_table" model="ir.actions.act_window">
+        <field name="name">Tax Rate Table</field>
+        <field name="res_model">tax.rate.table</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_tax_rate_root" name="Tax Rates" parent="account.menu_finance" sequence="30"/>
+    <menuitem id="menu_tax_rate_table" name="Rate Table" parent="menu_tax_rate_root" action="action_tax_rate_table"/>
+</odoo>
