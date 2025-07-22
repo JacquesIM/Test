@@ -6,6 +6,7 @@
     'description': 'Manage variable tax rates by date and currency.',
     'depends': ['account'],
     'data': [
+    'security/ir.model.access.csv'
     'views/tax_rate_views.xml',
     'views/tax_rate_action.xml',
     'views/tax_rate_menu.xml',
