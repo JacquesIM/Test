@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="view_order_form_inherit_tax_rate" model="ir.ui.view">
         <field name="name">sale.order.form.inherit.tax.rate</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//sheet" position="inside">
+            <xpath expr="//sheet/notebook/page[@name='order_lines']" position="before">
                 <group>
-                    <field name="tax_rate_table_id"/>
+                    <field name="custom_tax_rate"/>
                 </group>
             </xpath>
         </field>
