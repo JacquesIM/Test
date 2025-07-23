@@ -7,6 +7,7 @@
     'depends': ['account'],
     'data': [
     'security/ir.model.access.csv',
+    'views/sale_order_view.xml',
     'views/tax_rate_views.xml',
     'views/tax_rate_action.xml',
     'views/tax_rate_menu.xml',
