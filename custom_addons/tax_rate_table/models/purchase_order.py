@@ -16,3 +16,13 @@ class PurchaseOrder(models.Model):
         for order in self:
             rate = TaxRate.get_tax_rate(order.currency_id.id, order.date_order or date.today())
             order.custom_tax_rate = rate.tax_rate if rate else 0.0
+
+    def _prepare_invoice(self):
+        invoice_vals = super()._prepare_invoice()
+
+        # Inject the custom context into the invoice
+        invoice_vals['custom_tax_rate'] = self.custom_tax_rate
+        invoice_vals['currency_id'] = self.currency_id.id
+        invoice_vals['invoice_date'] = self.date_order  # Syncs tax date
+
+        return invoice_vals

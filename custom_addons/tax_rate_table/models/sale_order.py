@@ -19,3 +19,13 @@ class SaleOrder(models.Model):
                 ('date', '<=', order.date_order or date.today())
             ], order='date desc', limit=1)
             order.custom_tax_rate = rate.tax_rate if rate else 0.0
+
+    def _prepare_invoice(self):
+        invoice_vals = super()._prepare_invoice()
+
+        # Inject date and currency into the invoice — used for custom tax logic
+        invoice_vals['custom_tax_rate'] = self.custom_tax_rate
+        invoice_vals['currency_id'] = self.currency_id.id
+        invoice_vals['invoice_date'] = self.date_order  # optional: aligns tax rate timing
+
+        return invoice_vals
