@@ -5,8 +5,8 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//sheet/notebook/page[@name='order_lines']" position="before">
-                <group>
-                    <field name="custom_tax_rate"/>
+                <group string="Tax Information">
+                    <field name="custom_tax_rate" readonly="1"/>
                 </group>
             </xpath>
         </field>
