@@ -22,10 +22,7 @@ class SaleOrder(models.Model):
 
     def _prepare_invoice(self):
         invoice_vals = super()._prepare_invoice()
-
-        # Inject date and currency into the invoice — used for custom tax logic
         invoice_vals['custom_tax_rate'] = self.custom_tax_rate
         invoice_vals['currency_id'] = self.currency_id.id
-        invoice_vals['invoice_date'] = self.date_order  # optional: aligns tax rate timing
-
+        invoice_vals['invoice_date'] = self.date_order
         return invoice_vals

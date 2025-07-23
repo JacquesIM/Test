@@ -18,12 +18,10 @@ class AccountMove(models.Model):
             move.custom_tax_rate = rate.tax_rate if rate else 0.0
 
     def _get_tax_context(self):
-        """Helper method to build tax context with currency and date"""
         return {
             'currency_id': self.currency_id.id,
             'date_order': self.invoice_date or date.today(),
         }
 
     def _prepare_tax_context(self):
-        """Call this when computing taxes or creating invoice lines"""
         return self._get_tax_context()
