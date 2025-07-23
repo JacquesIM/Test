@@ -1,0 +1,13 @@
+<!-- views/account_move_view.xml -->
+<odoo>
+    <record id="account_move_form_inherit_tax_rate" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.tax.rate</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="inside">
+                <field name="custom_tax_rate" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

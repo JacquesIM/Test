@@ -4,12 +4,17 @@
     'category': 'Accounting',
     'summary': 'Date-based Tax Rates like Currency Exchange',
     'description': 'Manage variable tax rates by date and currency.',
-    'depends': ['account'],
+    'depends': ['base', 'sale', 'purchase', 'account'],
     'data': [
     'security/ir.model.access.csv',
+    'views/sale_order_view.xml',
+    'views/purchase_order_view.xml',
+    'views/account_move_view.xml',
     'views/tax_rate_views.xml',
     'views/tax_rate_action.xml',
     'views/tax_rate_menu.xml',
 ],
     'installable': True,
+    'application': False,
+    'auto_install': False,
 }
