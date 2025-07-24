@@ -1,7 +1,8 @@
 <odoo>
-    <record id="sale_order_line_inherit_usd_fields" model="ir.ui.view">
-        <field name="name">sale.order.line.inherit.usd.fields</field>
-        <field name="model">sale.order</field>
+    <!-- Inherit the tree view of sale.order.line -->
+    <record id="sale_order_line_tree_inherit_usd_fields" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.inherit.usd.fields</field>
+        <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
