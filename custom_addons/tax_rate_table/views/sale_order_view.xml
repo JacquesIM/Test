@@ -4,7 +4,7 @@
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_line_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='price_unit']" position="after">
+            <xpath expr="//tree" position="inside">
                 <field name="custom_price_usd"/>
                 <field name="custom_tax_usd"/>
                 <field name="custom_total_usd"/>
