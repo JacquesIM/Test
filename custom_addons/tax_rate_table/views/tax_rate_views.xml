@@ -19,19 +19,19 @@
         </field>
     </record>
 
-    <!-- List View (was Tree View) -->
+    <!-- ✅ List View (was Tree View) -->
     <record id="view_tax_rate_table_tree" model="ir.ui.view">
         <field name="name">tax.rate.table.tree</field>
         <field name="model">tax.rate.table</field>
-        <field name="type">list</field> <!-- ✅ FIXED -->
+        <field name="type">list</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="date"/>
                 <field name="base_unit"/>
                 <field name="tax_rate"/>
                 <field name="currency_id"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -39,7 +39,7 @@
     <record id="action_tax_rate_table" model="ir.actions.act_window">
         <field name="name">Tax Rate Table</field>
         <field name="res_model">tax.rate.table</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <!-- Menu Items -->
