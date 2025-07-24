@@ -1,23 +1,8 @@
 <odoo>
-    <!-- Add USD fields to Sale Order Lines tree view -->
     <record id="sale_order_line_tree_inherit_usd_fields" model="ir.ui.view">
         <field name="name">sale.order.line.tree.inherit.usd.fields</field>
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_order_line_tree"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='price_unit']" position="after">
-                <field name="custom_price_usd"/>
-                <field name="custom_tax_usd"/>
-                <field name="custom_total_usd"/>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Optionally, to display the fields on the form view of sale.order.line -->
-    <record id="sale_order_line_form_inherit_usd_fields" model="ir.ui.view">
-        <field name="name">sale.order.line.form.inherit.usd.fields</field>
-        <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="sale.view_order_line_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='price_unit']" position="after">
                 <field name="custom_price_usd"/>
