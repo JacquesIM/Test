@@ -13,6 +13,8 @@
     'views/tax_rate_views.xml',
     'views/tax_rate_action.xml',
     'views/tax_rate_menu.xml',
+    'views/sale_order_form_inherit.xml',
+    'views/sale_order_line_tree_inherit.xml',
 ],
     'installable': True,
     'application': False,
