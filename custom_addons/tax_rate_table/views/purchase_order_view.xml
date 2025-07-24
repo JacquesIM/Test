@@ -1,5 +1,5 @@
-<!-- views/purchase_order_view.xml -->
 <odoo>
+    <!-- ✅ Inherit Purchase Order Form to add custom tax rate on header -->
     <record id="purchase_order_form_inherit_tax_rate" model="ir.ui.view">
         <field name="name">purchase.order.form.inherit.tax.rate</field>
         <field name="model">purchase.order</field>
@@ -7,6 +7,34 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet/group" position="inside">
                 <field name="custom_tax_rate" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ✅ Inherit Purchase Order Line FORM view to show USD fields -->
+    <record id="purchase_order_line_form_inherit_usd_fields" model="ir.ui.view">
+        <field name="name">purchase.order.line.form.inherit.usd.fields</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_unit']" position="after">
+                <field name="custom_price_usd"/>
+                <field name="custom_tax_usd"/>
+                <field name="custom_total_usd"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ✅ Inherit Purchase Order Line TREE view to show USD fields -->
+    <record id="purchase_order_line_tree_inherit_usd_fields" model="ir.ui.view">
+        <field name="name">purchase.order.line.tree.inherit.usd.fields</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_unit']" position="after">
+                <field name="custom_price_usd"/>
+                <field name="custom_tax_usd"/>
+                <field name="custom_total_usd"/>
             </xpath>
         </field>
     </record>

@@ -19,10 +19,7 @@ class PurchaseOrder(models.Model):
 
     def _prepare_invoice(self):
         invoice_vals = super()._prepare_invoice()
-
-        # Inject the custom context into the invoice
         invoice_vals['custom_tax_rate'] = self.custom_tax_rate
         invoice_vals['currency_id'] = self.currency_id.id
-        invoice_vals['invoice_date'] = self.date_order  # Syncs tax date
-
+        invoice_vals['invoice_date'] = self.date_order
         return invoice_vals
