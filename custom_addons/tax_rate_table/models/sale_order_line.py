@@ -1,4 +1,4 @@
-from odoo import models, api, fields
+from odoo import models, fields, api
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -22,7 +22,7 @@ class SaleOrderLine(models.Model):
     @api.depends('product_uom_qty', 'price_unit', 'tax_id', 'order_id.custom_tax_rate')
     def _compute_custom_usd(self):
         for line in self:
-            # Example: Replace with real product LBP cost logic later
+            # Replace this logic with your actual product cost and fx rates
             product_cost_lbp = 50000.0
             product_fx = 100000.0
             tax_fx = line.order_id.custom_tax_rate or 1.0
