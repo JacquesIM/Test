@@ -1,14 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_order_form_inherit_tax_usd" model="ir.ui.view">
         <field name="name">sale.order.form.inherit.tax.usd</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <!-- Add USD tax fields inside order_line tree -->
-            <xpath expr="//field[@name='order_line']/tree" position="inside">
-                <field name="custom_price_usd"/>
-                <field name="custom_tax_usd"/>
-                <field name="custom_total_usd"/>
+            <!-- Insert custom_tax_rate below currency_id field in the order form -->
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="custom_tax_rate" readonly="1"/>
             </xpath>
         </field>
     </record>
