@@ -17,7 +17,7 @@ class PurchaseOrder(models.Model):
         for order in self:
             rate = TaxRate.get_tax_rate(
                 currency_id=order.currency_id.id,
-                rate_date=order.date_order or date.today()
+                on_date=order.date_order or date.today()  # ✅ fixed: was rate_date
             )
             order.custom_tax_rate = rate.tax_rate if rate else 1.0  # Default fallback rate
 
